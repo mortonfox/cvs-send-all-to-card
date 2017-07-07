@@ -1,0 +1,20 @@
+{
+    "manifest_version": 2,
+    "name": "CVS - Send All To Card",
+    "version": "0.0.1",
+
+    "description": "In ExtraCare Home, send all coupons to the CVS card.",
+
+    "page_action": {
+	"default_title": "cvs_send_all_to_card"
+    },
+
+    "content_scripts": [
+	{
+	    "matches": [
+		"https://www.cvs.com/extracare/home"
+	    ],
+	    "js": ["main.js"]
+	}
+    ]
+}
