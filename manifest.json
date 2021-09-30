@@ -12,8 +12,8 @@
     "content_scripts": [
 	{
 	    "matches": [
-		"https://www.cvs.com/extracare/home"
-	    ],
+                "https://www.cvs.com/extracare/home*"
+            ],
 	    "js": ["main.js"]
 	}
     ]
