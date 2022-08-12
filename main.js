@@ -1,18 +1,39 @@
-// jshint esversion: 6
+// jshint esversion: 8
 
-function runSelect(event) {
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function runSelect(event) {
   event.preventDefault();
 
-  // Click on every "send to card" button.
-  let send2crd = document.getElementsByClassName('action-items');
-  console.log(send2crd.length + ' coupons found');
+  // Scroll to the bottom a few times to try to get all coupons to show up.
+  for (let i = 0; i < 5; ++i) {
+    window.scrollTo(0, document.body.scrollHeight);
+    await sleep(200);
+  }
+
+  let coupons = document.getElementsByTagName('cvs-coupon-container');
+  console.log(coupons.length + ' coupons found');
 
   let clicked = 0;
-  for (let btn of send2crd) {
-    btn.click();
-    clicked++;
+  for (let coupon of coupons) {
+    let shadow = coupon.shadowRoot;
+    if (shadow) {
+      // Click on "send to card" buttons.
+      let send2crd = shadow.querySelectorAll('button.coupon-action');
+      for (let btn of send2crd) {
+        // console.log(btn);
+        btn.click();
+        clicked++;
+      }
+    }
   }
+
   console.log(clicked + ' coupons clicked');
+
+  // Scroll back to the top.
+  window.scrollTo(0, 0);
 }
 
 function insertButton(btn) {
