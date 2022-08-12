@@ -8,9 +8,9 @@ async function runSelect(event) {
   event.preventDefault();
 
   // Scroll to the bottom a few times to try to get all coupons to show up.
-  for (let i = 0; i < 5; ++i) {
+  for (let i = 0; i < 7; ++i) {
     window.scrollTo(0, document.body.scrollHeight);
-    await sleep(200);
+    await sleep(300);
   }
 
   let coupons = document.getElementsByTagName('cvs-coupon-container');
