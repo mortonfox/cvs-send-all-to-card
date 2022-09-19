@@ -18,16 +18,18 @@ async function runSelect(event) {
 
   let clicked = 0;
   for (let coupon of coupons) {
-    let shadow = coupon.shadowRoot;
-    if (shadow) {
+    // let shadow = coupon.shadowRoot;
+    // if (shadow) {
       // Click on "send to card" buttons.
-      let send2crd = shadow.querySelectorAll('button.coupon-action');
+      let send2crd = coupon.querySelectorAll('button.coupon-action');
       for (let btn of send2crd) {
         // console.log(btn);
+        btn.scrollIntoView();
         btn.click();
         clicked++;
+        await sleep(50);
       }
-    }
+    // }
   }
 
   console.log(clicked + ' coupons clicked');
