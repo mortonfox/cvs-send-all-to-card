@@ -24,10 +24,9 @@ async function runSelect(event) {
       let send2crd = coupon.querySelectorAll('button.coupon-action');
       for (let btn of send2crd) {
         // console.log(btn);
-        btn.scrollIntoView();
+        // btn.scrollIntoView();
         btn.click();
         clicked++;
-        await sleep(50);
       }
     // }
   }
