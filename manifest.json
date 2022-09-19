@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "CVS - Send All To Card",
-    "version": "0.0.2",
+    "version": "0.0.3",
 
     "description": "In ExtraCare Home, send all coupons to the CVS card.",
 
