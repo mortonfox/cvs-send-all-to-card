@@ -39,10 +39,10 @@ async function runSelect(event) {
 
 function insertButton(btn) {
   function waitForSite() {
-    let targetElem = document.getElementsByClassName('coupon-list-container');
-    if (targetElem != null && targetElem[0] !== undefined) {
+    let targetElem = document.querySelector('extracare-all-coupons');
+    if (targetElem != null) {
       clearInterval(waitForSiteTimer);
-      targetElem[0].insertBefore(btn, targetElem[0].firstChild);
+      targetElem.insertBefore(btn, targetElem.firstChild);
     }
   }
 
