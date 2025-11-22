@@ -32,6 +32,7 @@ async function runSelect(event) {
   }
 
   console.log(clicked + ' coupons clicked');
+  alert(clicked + ' coupons clicked');
 
   // Scroll back to the top.
   window.scrollTo(0, 0);
@@ -39,7 +40,7 @@ async function runSelect(event) {
 
 function insertButton(btn) {
   function waitForSite() {
-    let targetElem = document.querySelector('extracare-all-coupons');
+    let targetElem = document.querySelector('.main-content');
     if (targetElem != null) {
       clearInterval(waitForSiteTimer);
       targetElem.insertBefore(btn, targetElem.firstChild);
